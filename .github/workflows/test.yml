@@ -1,17 +1,25 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: my_first_ga
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "main", "p/**" ]
   pull_request:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+env:
+  # Make different between github action and jenkins build and push
+  # "-act", ex: vxxx-brach-act-az
+  mysecret: '${{ secrets.MY_SECRET }}'
+  GIT_ORIGIN: '${{ github.SERVER_URL }}'
+  CUR_REPO: '${{ github.REPOSITORY  }}'
+  CRED: '${{ secrets.GITHUB_TOKEN }}'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,12 +33,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo testing
+          echo "this is my env ${{ env.CRED }}"
+          echo "this is my env ${{ env.mysecret }}"

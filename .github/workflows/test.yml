@@ -39,3 +39,12 @@ jobs:
           echo testing
           echo "this is my env ${{ env.CRED }}"
           echo "this is my env ${{ env.mysecret }}"
+
+      - name: write files
+        run: |
+          echo testing
+          echo "this is my env ${{ env.CRED }}\n" > file
+          echo "this is my env ${{ env.mysecret }}" >> file
+      - name: get
+        run: | 
+          cat files

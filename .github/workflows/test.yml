@@ -20,6 +20,9 @@ env:
   GIT_ORIGIN: '${{ github.SERVER_URL }}'
   CUR_REPO: '${{ github.REPOSITORY  }}'
   CRED: '${{ secrets.GITHUB_TOKEN }}'
+  AWS_ACCESS_KEY_ID: '${{ secrets.AK }}'
+  AWS_SECRET_ACCESS_KEY: '${{ secrets.SK }}'
+  AWS_SESSION_TOKEN: '${{ secrets.ST }}'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

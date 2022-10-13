@@ -57,3 +57,7 @@ jobs:
       - name: run python
         run: |
           python3 main.py
+
+      - name: test22
+        run: |
+          echo $GITHUB_ENV

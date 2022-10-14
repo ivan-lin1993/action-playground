@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: "docker/login-action@v2"
         name: Login to harbor
-        with:
-          registry: aws.registry.trendmicro.com
-          username: robot$luwak+xdr-app-mxdr
-          password: ${{ secrets.harbor_luwak_pwd }}
+        run: |
+          docker login aws.registry.trendmicro.com -u robot$luwak+xdr-app-mxdr -p ${{ secrets.harbor_luwak_pwd }}
+        # with:
+        #   registry: aws.registry.trendmicro.com
+        #   username: robot$luwak+xdr-app-mxdr
+        #   password: ${{ secrets.harbor_luwak_pwd }}

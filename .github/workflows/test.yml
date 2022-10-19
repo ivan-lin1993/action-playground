@@ -44,8 +44,6 @@ jobs:
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2.1.0
         with:
-          
-          nunit_files: "*.xml"
-          
+          xunit_files: "*.xml"
           check_name: unittest coverage result
           comment_title: unittest coverage result

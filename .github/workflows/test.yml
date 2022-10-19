@@ -41,9 +41,11 @@ jobs:
         run: |
           echo $GITHUB_ENV
 
-      - name: Publish test results 
-        uses: EnricoMi/publish-unit-test-result-action@v1
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2.1.0
         with:
-          files: coverage.xml
+          junit_files: "*.xml"
+          nunit_files: "*.xml"
+          xunit_files: "*.xml"
           check_name: unittest coverage result
           comment_title: unittest coverage result

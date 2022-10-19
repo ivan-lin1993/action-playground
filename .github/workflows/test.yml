@@ -8,6 +8,7 @@ on:
   push:
     branches: [ "ff/**", "p/**" ]
   pull_request:
+    types: [opened, synchronize, labeled]
     branches: [ "main", "p/**" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -40,9 +41,9 @@ jobs:
         run: |
           echo $GITHUB_ENV
 
-      - name: Publish test results 
-        uses: EnricoMi/publish-unit-test-result-action@v1
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2.1.0
         with:
-          files: coverage.xml
+          xunit_files: "coverage.xml"
           check_name: unittest coverage result
           comment_title: unittest coverage result

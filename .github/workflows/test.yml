@@ -8,7 +8,7 @@ on:
   push:
     branches: [ "ff/**", "p/**" ]
   pull_request:
-    branches: [ "p/**" ]
+    branches: [ "main", "p/**" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

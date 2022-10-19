@@ -8,6 +8,7 @@ on:
   push:
     branches: [ "ff/**", "p/**" ]
   pull_request:
+    types: [opened, synchronize, labeled]
     branches: [ "main", "p/**" ]
 
   # Allows you to run this workflow manually from the Actions tab

@@ -10,4 +10,4 @@ file.write(f"{os.environ.get('mysecret')}")
 file.close()
 
 with open("test", "rb") as f:
-    s3.upload_fileobj(f, "mxdr-dev-ivan-frontend-static-file", "testfile")
+    s3.upload_fileobj(f, "mxdr-dev-ivan-cft-templates-bucket", "testfile")

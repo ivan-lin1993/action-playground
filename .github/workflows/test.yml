@@ -18,9 +18,6 @@ env:
   # Make different between github action and jenkins build and push
   # "-act", ex: vxxx-brach-act-az
   mysecret: '${{ secrets.MY_SECRET }}'
-  GIT_ORIGIN: '${{ github.SERVER_URL }}'
-  CUR_REPO: '${{ github.REPOSITORY  }}'
-  CRED: '${{ secrets.GITHUB_TOKEN }}'
   AWS_ACCESS_KEY_ID: '${{ secrets.AK }}'
   AWS_SECRET_ACCESS_KEY: '${{ secrets.SK }}'
   AWS_SESSION_TOKEN: '${{ secrets.ST }}'

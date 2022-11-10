@@ -36,11 +36,7 @@ jobs:
 
       - name: test22
         run: |
-          echo $GITHUB_ENV
+          pip install boto3
+          python main.py
 
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2.1.0
-        with:
-          nunit_files: "coverage.xml"
-          check_name: unittest coverage result2
-          comment_title: unittest coverage result394
+     
